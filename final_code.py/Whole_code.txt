@@ -1,0 +1,1341 @@
+import pandas as pd
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+# Load dataset
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objs as go
+df = pd.read_csv(r"data.txt", 
+                 delim_whitespace=True, header=None, 
+                 names=['Date_Time', 'Agency', 'Event','a','b','c','d','e']) 
+
+df.sort_values(by='Date_Time', inplace=True)
+
+
+fig = px.bar(df, 
+             x='Date_Time',  
+             color='Event',  
+             title="Correctly Ordereda Vertical Bar Graph",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+
+
+day1 = df[df['Date_Time'].str.contains('2024-168')]
+day2 = df[df['Date_Time'].str.contains('2024-169')]
+day3 = df[df['Date_Time'].str.contains('2024-170')]
+day4 = df[df['Date_Time'].str.contains('2024-171')]
+day5 = df[df['Date_Time'].str.contains('2024-172')]
+day6 = df[df['Date_Time'].str.contains('2024-173')]
+day7 = df[df['Date_Time'].str.contains('2024-174')]
+day8 = df[df['Date_Time'].str.contains('2024-175')]
+
+df_unique = day1.drop_duplicates(subset=['Date_Time'])
+
+
+df_unique['Count'] = 1 
+df_unique2 = day2.drop_duplicates(subset=['Date_Time'])
+df_unique3 = day3.drop_duplicates(subset=['Date_Time'])
+df_unique4 = day4.drop_duplicates(subset=['Date_Time'])
+df_unique5 = day5.drop_duplicates(subset=['Date_Time'])
+df_unique6 = day6.drop_duplicates(subset=['Date_Time'])
+df_unique7 = day7.drop_duplicates(subset=['Date_Time'])
+df_unique8 = day8.drop_duplicates(subset=['Date_Time'])
+df_unique2['Count'] = 1
+df_unique3['Count'] = 1
+df_unique4['Count'] = 1
+df_unique5['Count'] = 1
+df_unique6['Count'] = 1
+df_unique7['Count'] = 1
+df_unique8['Count'] = 1
+
+fig1 = px.bar(df_unique, 
+             x='Date_Time',
+               y='Count',
+             color='Event',  
+             title="Day 1",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig1.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig1.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig1.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+
+df.sort_values(by='Date_Time', inplace=True)
+df.sort_values(by='Date_Time', inplace=True)
+
+
+fig2 = px.bar(df_unique2, 
+             x='Date_Time',
+              y='Count',
+             color='Event',  
+             title="Day Two Data",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig2.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig2.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig2.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+
+
+
+fig3 = px.bar(df_unique3, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 3",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig3.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig3.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig3.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+
+
+fig4 = px.bar(df_unique4, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 4",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig4.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig4.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig4.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+
+fig5 = px.bar(df_unique5, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 5",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig5.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig5.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig5.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+
+fig6 = px.bar(df_unique6, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 6",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig6.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig6.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig6.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+
+fig7 = px.bar(df_unique7, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 7",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig7.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig7.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig7.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+
+fig8 = px.bar(df_unique8, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 8",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig8.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig8.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig8.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+
+
+df["Date_Time"] = df["Date_Time"].astype(str)
+df.sort_values(by="Date_Time", inplace=True)
+
+
+event_types = df["Event"].unique()
+event_colors = {event: px.colors.qualitative.Set1[i % len(px.colors.qualitative.Set1)] for i, event in enumerate(event_types)}
+
+
+days = [f"2024-{168 + i}" for i in range(8)]
+day_data = {day: df[df["Date_Time"].str.contains(day)] for day in days}
+
+
+fig = make_subplots(rows=8, cols=1, shared_xaxes=False, 
+                    subplot_titles=[f"Day {i+1}" for i in range(8)], 
+                    vertical_spacing=0.1)
+
+
+for i, (day, data) in enumerate(day_data.items()):
+    fig.add_trace(
+        go.Bar(
+            x=[f"Event {j+1}" for j in range(len(data))],
+            y=[1] * len(data),  
+            marker=dict(color=[event_colors[event] for event in data["Event"]]),
+            name=data["Event"].iloc[0] if not data.empty else "Unknown", 
+            hovertext=[f"Event: {row['Event']}<br>Date: {row['Date_Time']}<br>Count: 1<br>Agency: {row['Agency']}" for _, row in data.iterrows()],
+            hoverinfo="text"
+        ),
+        row=i+1, col=1
+    )
+
+
+fig.update_layout(
+    title="Event-Based Graphs for 8 Days (Same as Original)",
+    height=4500, width=1200,  
+    showlegend=True
+)
+
+
+fig.update_xaxes(showticklabels=False)
+
+
+fig.show()
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objs as go
+df = pd.read_csv(r"data.txt", 
+                 delim_whitespace=True, header=None, 
+                 names=['Date_Time', 'Agency', 'Event','a','b','c','d','e']) 
+print(df)
+
+df.sort_values(by='Date_Time', inplace=True)
+
+
+fig = px.bar(df, 
+             x='Date_Time',  
+             color='Event',  
+             title="Correctly Ordereda Vertical Bar Graph",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig.show()
+df_unique = day1.drop_duplicates(subset=['Date_Time'])
+
+
+df_unique['Count'] = 1 
+df_unique2 = day2.drop_duplicates(subset=['Date_Time'])
+df_unique3 = day3.drop_duplicates(subset=['Date_Time'])
+df_unique4 = day4.drop_duplicates(subset=['Date_Time'])
+df_unique5 = day5.drop_duplicates(subset=['Date_Time'])
+df_unique6 = day6.drop_duplicates(subset=['Date_Time'])
+df_unique7 = day7.drop_duplicates(subset=['Date_Time'])
+df_unique8 = day8.drop_duplicates(subset=['Date_Time'])
+df_unique2['Count'] = 1
+df_unique3['Count'] = 1
+df_unique4['Count'] = 1
+df_unique5['Count'] = 1
+df_unique6['Count'] = 1
+df_unique7['Count'] = 1
+df_unique8['Count'] = 1
+
+fig1 = px.bar(df_unique, 
+             x='Date_Time',
+               y='Count',
+             color='Event',  
+             title="Day 1",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig1.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig1.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig1.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig1.show()
+df.sort_values(by='Date_Time', inplace=True)
+df.sort_values(by='Date_Time', inplace=True)
+
+
+fig2 = px.bar(df_unique2, 
+             x='Date_Time',
+              y='Count',
+             color='Event',  
+             title="Day Two Data",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig2.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig2.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig2.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig2.show()
+
+
+fig3 = px.bar(df_unique3, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 3",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig3.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig3.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig3.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig3.show()
+
+fig4 = px.bar(df_unique4, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 4",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig4.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig4.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig4.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig4.show()
+fig5 = px.bar(df_unique5, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 5",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig5.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig5.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig5.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig5.show()
+fig6 = px.bar(df_unique6, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 6",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig6.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig6.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig6.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig6.show()
+fig7 = px.bar(df_unique7, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 7",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig7.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig7.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig7.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig7.show()
+fig8 = px.bar(df_unique8, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 8",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig8.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig8.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig8.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig8.show()
+from plotly import tools
+import plotly.graph_objs as go
+from plotly.offline import iplot
+import pandas as pd
+
+# Load the data
+df = pd.read_csv(r"data.txt", delim_whitespace=True, header=None, names=['Date_Time', 'Agency', 'Event','a','b','c','d','e'])
+
+# Check for any rows that don't match expected date format
+print(df['Date_Time'].head())
+
+# Remove rows that don't have valid datetime entries
+df = df[df['Date_Time'] != 'Date_AND_Time']
+
+# Now, attempt to convert Date_Time to datetime, assuming the format is '%Y-%m-%d %H:%M:%S'
+df['Date_Time'] = pd.to_datetime(df['Date_Time'], errors='coerce', format='%Y-%m-%d %H:%M:%S')
+
+# Verify conversion was successful
+print(df['Date_Time'].head())
+
+fig_subplot = tools.make_subplots(rows=8, cols=1)
+
+
+fig_subplot.append_trace(fig1, row=1, col=1)
+fig_subplot.append_trace(fig2, row=2, col=1)
+fig_subplot.append_trace(fig3, row=3, col=1)
+fig_subplot.append_trace(fig4, row=4, col=1)
+fig_subplot.append_trace(fig5, row=5, col=1)
+fig_subplot.append_trace(fig6, row=6, col=1)
+fig_subplot.append_trace(fig2, row=7, col=1)
+fig_subplot.append_trace(fig2, row=8, col=1)
+
+fig_subplot['layout'].update(height=600, width=800,title='subplot')
+iplot(fig_subplot)
+iplot(fig_subplot)
+from plotly.subplots import make_subplots
+from plotly.offline import iplot
+
+# Create the subplot figure (8 rows, 1 column)
+fig_subplot = make_subplots(rows=8, cols=1)
+
+# Add the traces from each figure into the subplot layout
+for i, fig in enumerate([fig1, fig2, fig3, fig4, fig5, fig6, fig7, fig8], start=1):
+    for trace in fig.data:
+        # Add each trace to the corresponding subplot row
+        fig_subplot.add_trace(trace, row=i, col=1)
+
+# Update layout to make the subplot look good
+fig_subplot.update_layout(
+    height=1200,  # Adjusted height to fit all 8 subplots
+    width=800,
+    title='Combined Subplot of All Days',
+    showlegend=False  # Optional: Set to True if you want the legend
+)
+
+# Show the final subplot
+iplot(fig_subplot)
+
+
+---------------------------------------------------------------------------------------------------------------------------------------import pandas as pd
+import plotly.express as px
+import plotly.graph_objs as go
+
+df = pd.read_csv(r"data.txt", 
+                 delim_whitespace=True, header=None, 
+                 names=['Date_Time', 'Agency', 'Event','a','b','c','d','e']) 
+
+days_data = []
+
+# Filter data for the desired days (from 100th to 200th day)
+for i in range(168, 200):
+    day = df[df['Date_Time'].str.contains(f'2024-{i:03d}')] 
+    days_data.append(day)
+
+# Correct assignment: Assign each 'day' to its respective variable (day1, day2, etc.)
+for i, day in enumerate(days_data, start=1):
+    globals()[f'day{i}'] = day
+
+ # Example: Display day2
+df_unique = day1.drop_duplicates(subset=['Date_Time'])
+
+
+df_unique['Count'] = 1 
+df_unique2 = day2.drop_duplicates(subset=['Date_Time'])
+df_unique3 = day3.drop_duplicates(subset=['Date_Time'])
+df_unique4 = day4.drop_duplicates(subset=['Date_Time'])
+df_unique5 = day5.drop_duplicates(subset=['Date_Time'])
+df_unique6 = day6.drop_duplicates(subset=['Date_Time'])
+df_unique7 = day7.drop_duplicates(subset=['Date_Time'])
+df_unique8 = day8.drop_duplicates(subset=['Date_Time'])
+df_unique2['Count'] = 1
+df_unique3['Count'] = 1
+df_unique4['Count'] = 1
+df_unique5['Count'] = 1
+df_unique6['Count'] = 1
+df_unique7['Count'] = 1
+df_unique8['Count'] = 1
+
+fig1 = px.bar(df_unique, 
+             x='Date_Time',
+               y='Count',
+             color='Event',  
+             title="Day 1",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig1.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig1.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig1.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig1.show()
+df.sort_values(by='Date_Time', inplace=True)
+df.sort_values(by='Date_Time', inplace=True)
+
+
+fig2 = px.bar(df_unique2, 
+             x='Date_Time',
+              y='Count',
+             color='Event',  
+             title="Day Two Data",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig2.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig2.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig2.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig2.show()
+
+
+fig3 = px.bar(df_unique3, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 3",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig3.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig3.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig3.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig3.show()
+
+fig4 = px.bar(df_unique4, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 4",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig4.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig4.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig4.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig4.show()
+fig5 = px.bar(df_unique5, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 5",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig5.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig5.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig5.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig5.show()
+fig6 = px.bar(df_unique6, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 6",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig6.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig6.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig6.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig6.show()
+fig7 = px.bar(df_unique7, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 7",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig7.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig7.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig7.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig7.show()
+fig8 = px.bar(df_unique8, 
+             x='Date_Time',  
+             color='Event',  
+             title="Day 8",
+            
+             category_orders={'Date_Time': df['Date_Time'].tolist()},
+            hover_data=['Date_Time','Agency','Event'])
+
+
+fig8.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+
+fig8.update_layout(xaxis=dict(tickangle=-45),bargap=0.5,)
+
+fig8.update_layout(
+    xaxis_title='Time',
+    yaxis_title='Count',
+    xaxis=dict(showticklabels=False),
+    yaxis=dict(showticklabels=False),
+)
+fig8.show()
+
+import pandas as pd
+import plotly.express as px
+
+# Read data from the file
+df = pd.read_csv(r"data.txt", 
+                 delim_whitespace=True, header=None, 
+                 names=['Date_Time', 'Agency', 'Event', 'a', 'b', 'c', 'd', 'e'])
+
+# Initialize an empty list to store filtered day data
+days_data = []
+
+# Filter data for the desired days (from 168th to 200th day)
+for i in range(168, 200):
+    day = df[df['Date_Time'].str.contains(f'2024-{i:03d}')] 
+    days_data.append(day)
+
+# Assign each filtered day to a separate variable (day1, day2, etc.)
+for i, day in enumerate(days_data, start=1):
+    globals()[f'day{i}'] = day
+
+# Convert Date_Time column to datetime format for each day
+for day in [day1, day2, day3, day4, day5, day6, day7, day8]:
+    day['Date_Time'] = pd.to_datetime(day['Date_Time'], format='%Y-%jT%H:%M:%S.%f')
+
+# Remove duplicate Date_Time entries and add a 'Count' column to each day DataFrame
+for day in [day1, day2, day3, day4, day5, day6, day7, day8]:
+    day.drop_duplicates(subset=['Date_Time'], inplace=True)
+    day['Count'] = 1  # Add Count column for each day
+
+# Plotting for Day 1
+df_unique = day1.drop_duplicates(subset=['Date_Time'])
+fig1 = px.bar(df_unique, 
+              x='Date_Time',
+              y='Count',
+              color='Event',  
+              title="Day 1",
+              hover_data=['Date_Time','Agency','Event'])
+
+fig1.update_layout(
+    xaxis=dict(
+        tickangle=-45,  # Rotate the x-axis labels for better visibility
+        tickformat='%Y-%m-%d %H:%M:%S',  # Display both date and hour
+        showticklabels=True
+    ),
+    bargap=0.1,  # Reduce gap between bars (make bars wider)
+    bargroupgap=0.1,  # Reduce gap within the same group of bars
+    height=600,  # Increase height of the chart
+    width=1000,  # Increase width of the chart
+    xaxis_title='Date and Time',
+    yaxis_title='Count'
+)
+
+fig1.show()
+
+# Plotting for Day 2
+df_unique2 = day2.drop_duplicates(subset=['Date_Time'])
+fig2 = px.bar(df_unique2, 
+              x='Date_Time',
+              y='Count',
+              color='Event',  
+              title="Day 2",
+              hover_data=['Date_Time','Agency','Event'])
+
+fig2.update_layout(
+    xaxis=dict(
+        tickangle=-45,  # Rotate the x-axis labels for better visibility
+        tickformat='%Y-%m-%d %H:%M:%S',  # Display both date and hour
+        showticklabels=True
+    ),
+    bargap=0.1,  # Reduce gap between bars (make bars wider)
+    bargroupgap=0.1,  # Reduce gap within the same group of bars
+    height=600,  # Increase height of the chart
+    width=1000,  # Increase width of the chart
+    xaxis_title='Date and Time',
+    yaxis_title='Count'
+)
+
+fig2.show()
+
+# Plotting for Day 3
+df_unique3 = day3.drop_duplicates(subset=['Date_Time'])
+fig3 = px.bar(df_unique3, 
+              x='Date_Time',
+              y='Count',
+              color='Event',  
+              title="Day 3",
+              hover_data=['Date_Time','Agency','Event'])
+
+fig3.update_layout(
+    xaxis=dict(
+        tickangle=-45,  # Rotate the x-axis labels for better visibility
+        tickformat='%Y-%m-%d %H:%M:%S',  # Display both date and hour
+        showticklabels=True
+    ),
+    bargap=0.1,  # Reduce gap between bars (make bars wider)
+    bargroupgap=0.1,  # Reduce gap within the same group of bars
+    height=600,  # Increase height of the chart
+    width=1000,  # Increase width of the chart
+    xaxis_title='Date and Time',
+    yaxis_title='Count'
+)
+
+fig3.show()
+
+# Plotting for Day 4
+df_unique4 = day4.drop_duplicates(subset=['Date_Time'])
+fig4 = px.bar(df_unique4, 
+              x='Date_Time',
+              y='Count',
+              color='Event',  
+              title="Day 4",
+              hover_data=['Date_Time','Agency','Event'])
+
+fig4.update_layout(
+    xaxis=dict(
+        tickangle=-45,  # Rotate the x-axis labels for better visibility
+        tickformat='%Y-%m-%d %H:%M:%S',  # Display both date and hour
+        showticklabels=True
+    ),
+    bargap=0.1,  # Reduce gap between bars (make bars wider)
+    bargroupgap=0.1,  # Reduce gap within the same group of bars
+    height=600,  # Increase height of the chart
+    width=1000,  # Increase width of the chart
+    xaxis_title='Date and Time',
+    yaxis_title='Count'
+)
+
+fig4.show()
+
+# Plotting for Day 5
+df_unique5 = day5.drop_duplicates(subset=['Date_Time'])
+fig5 = px.bar(df_unique5, 
+              x='Date_Time',
+              y='Count',
+              color='Event',  
+              title="Day 5",
+              hover_data=['Date_Time','Agency','Event'])
+
+fig5.update_layout(
+    xaxis=dict(
+        tickangle=-45,  # Rotate the x-axis labels for better visibility
+        tickformat='%Y-%m-%d %H:%M:%S',  # Display both date and hour
+        showticklabels=True
+    ),
+    bargap=0.1,  # Reduce gap between bars (make bars wider)
+    bargroupgap=0.1,  # Reduce gap within the same group of bars
+    height=600,  # Increase height of the chart
+    width=1000,  # Increase width of the chart
+    xaxis_title='Date and Time',
+    yaxis_title='Count'
+)
+
+fig5.show()
+
+# Plotting for Day 6
+df_unique6 = day6.drop_duplicates(subset=['Date_Time'])
+fig6 = px.bar(df_unique6, 
+              x='Date_Time',
+              y='Count',
+              color='Event',  
+              title="Day 6",
+              hover_data=['Date_Time','Agency','Event'])
+
+fig6.update_layout(
+    xaxis=dict(
+        tickangle=-45,  # Rotate the x-axis labels for better visibility
+        tickformat='%Y-%m-%d %H:%M:%S',  # Display both date and hour
+        showticklabels=True
+    ),
+    bargap=0.1,  # Reduce gap between bars (make bars wider)
+    bargroupgap=0.1,  # Reduce gap within the same group of bars
+    height=600,  # Increase height of the chart
+    width=1000,  # Increase width of the chart
+    xaxis_title='Date and Time',
+    yaxis_title='Count'
+)
+
+fig6.show()
+
+# Plotting for Day 7
+df_unique7 = day7.drop_duplicates(subset=['Date_Time'])
+fig7 = px.bar(df_unique7, 
+              x='Date_Time',
+              y='Count',
+              color='Event',  
+              title="Day 7",
+              hover_data=['Date_Time','Agency','Event'])
+
+fig7.update_layout(
+    xaxis=dict(
+        tickangle=-45,  # Rotate the x-axis labels for better visibility
+        tickformat='%Y-%m-%d %H:%M:%S',  # Display both date and hour
+        showticklabels=True
+    ),
+    bargap=0.1,  # Reduce gap between bars (make bars wider)
+    bargroupgap=0.1,  # Reduce gap within the same group of bars
+    height=600,  # Increase height of the chart
+    width=1000,  # Increase width of the chart
+    xaxis_title='Date and Time',
+    yaxis_title='Count'
+)
+
+fig7.show()
+
+# Plotting for Day 8
+df_unique8 = day8.drop_duplicates(subset=['Date_Time'])
+fig8 = px.bar(df_unique8, 
+              x='Date_Time',
+              y='Count',
+              color='Event',  
+              title="Day 8",
+              hover_data=['Date_Time','Agency','Event'])
+
+fig8.update_layout(
+    xaxis=dict(
+        tickangle=-45,  # Rotate the x-axis labels for better visibility
+        tickformat='%Y-%m-%d %H:%M:%S',  # Display both date and hour
+        showticklabels=True
+    ),
+    bargap=0.1,  # Reduce gap between bars (make bars wider)
+    bargroupgap=0.1,  # Reduce gap within the same group of bars
+    height=600,  # Increase height of the chart
+    width=1000,  # Increase width of the chart
+    xaxis_title='Date and Time',
+    yaxis_title='Count'
+)
+
+fig8.show()
+import pandas as pd
+import plotly.express as px
+
+# Read data from the file
+df = pd.read_csv(r"data.txt", 
+                 delim_whitespace=True, header=None, 
+                 names=['Date_Time', 'Agency', 'Event', 'a', 'b', 'c', 'd', 'e'])
+
+# Initialize an empty list to store filtered day data
+days_data = []
+
+# Filter data for the desired days (from 168th to 200th day)
+for i in range(168, 200):
+    day = df[df['Date_Time'].str.contains(f'2024-{i:03d}')] 
+    days_data.append(day)
+
+# Assign each filtered day to a separate variable (day1, day2, etc.)
+for i, day in enumerate(days_data, start=1):
+    globals()[f'day{i}'] = day
+
+# Convert Date_Time column to datetime format for each day
+for day in [day1, day2, day3, day4, day5, day6, day7, day8]:
+    day['Date_Time'] = pd.to_datetime(day['Date_Time'], format='%Y-%jT%H:%M:%S.%f')
+
+# Remove duplicate Date_Time entries and add a 'Count' column to each day DataFrame
+for day in [day1, day2, day3, day4, day5, day6, day7, day8]:
+    day.drop_duplicates(subset=['Date_Time'], inplace=True)
+    day['Count'] = 1  # Add Count column for each day
+
+# Function to create a bar chart for each day
+def create_bar_chart(day_data, day_title):
+    fig = px.bar(day_data, 
+                 x='Date_Time',
+                 y='Count',
+                 color='Event',  
+                 title=day_title,
+                 hover_data=['Date_Time','Agency','Event'])
+
+    fig.update_layout(
+        xaxis=dict(
+            tickangle=-45,  # Rotate the x-axis labels for better visibility
+            tickformat='%Y-%m-%d %H:%M:%S',  # Display both date and hour
+            showticklabels=True
+        ),
+        bargap=0.06,  # Reduce the gap between bars (increase bar size)
+        bargroupgap=0.06,  # Reduce the gap within the same group of bars
+        height=800,  # Increase height of the chart for larger bars
+        width=1200,  # Increase width of the chart for larger bars
+        barmode='stack',  # Stack bars to improve visibility
+        xaxis_title='Date and Time',
+        yaxis_title='Count'
+    )
+
+    fig.show()
+
+# Plotting for Day 1
+df_unique = day1.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique, "Day 1")
+
+# Plotting for Day 2
+df_unique2 = day2.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique2, "Day 2")
+
+# Plotting for Day 3
+df_unique3 = day3.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique3, "Day 3")
+
+# Plotting for Day 4
+df_unique4 = day4.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique4, "Day 4")
+
+# Plotting for Day 5
+df_unique5 = day5.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique5, "Day 5")
+
+# Plotting for Day 6
+df_unique6 = day6.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique6, "Day 6")
+
+# Plotting for Day 7
+df_unique7 = day7.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique7, "Day 7")
+
+# Plotting for Day 8
+df_unique8 = day8.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique8, "Day 8")
+import pandas as pd
+import plotly.express as px
+
+# Read data from the file
+df = pd.read_csv(r"data.txt", 
+                 delim_whitespace=True, header=None, 
+                 names=['Date_Time', 'Agency', 'Event', 'a', 'b', 'c', 'd', 'e'])
+
+# Initialize an empty list to store filtered day data
+days_data = []
+
+# Filter data for the desired days (from 168th to 200th day)
+for i in range(168, 200):
+    day = df[df['Date_Time'].str.contains(f'2024-{i:03d}')] 
+    days_data.append(day)
+
+# Assign each filtered day to a separate variable (day1, day2, etc.)
+for i, day in enumerate(days_data, start=1):
+    globals()[f'day{i}'] = day
+
+# Convert Date_Time column to datetime format for each day
+for day in [day1, day2, day3, day4, day5, day6, day7, day8]:
+    day['Date_Time'] = pd.to_datetime(day['Date_Time'], format='%Y-%jT%H:%M:%S.%f')
+
+# Remove duplicate Date_Time entries and add a 'Count' column to each day DataFrame
+for day in [day1, day2, day3, day4, day5, day6, day7, day8]:
+    day.drop_duplicates(subset=['Date_Time'], inplace=True)
+    day['Count'] = 1  # Add Count column for each day
+
+# Function to create a bar chart for each day
+def create_bar_chart(day_data, day_title):
+    fig = px.bar(day_data, 
+                 x='Date_Time',
+                 y='Count',
+                 color='Event',  
+                 title=day_title,
+                 hover_data=['Date_Time','Agency','Event'])
+
+    fig.update_layout(
+        xaxis=dict(
+            tickangle=-45,  # Rotate the x-axis labels for better visibility
+            tickformat='%Y-%m-%d %H:%M:%S',  # Display both date and hour
+            showticklabels=True
+        ),
+        bargap=0.0,  # Reduce the gap between bars (making bars as wide as possible)
+        bargroupgap=0.0,  # Remove gap between grouped bars
+        height=1000,  # Increase height for larger bars
+        width=1500,  # Increase width for larger bars
+        barmode='stack',  # Stack bars to improve visibility
+        xaxis_title='Date and Time',
+        yaxis_title='Count'
+    )
+
+    fig.show()
+
+# Plotting for Day 1
+df_unique = day1.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique, "Day 1")
+
+# Plotting for Day 2
+df_unique2 = day2.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique2, "Day 2")
+
+# Plotting for Day 3
+df_unique3 = day3.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique3, "Day 3")
+
+# Plotting for Day 4
+df_unique4 = day4.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique4, "Day 4")
+
+# Plotting for Day 5
+df_unique5 = day5.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique5, "Day 5")
+
+# Plotting for Day 6
+df_unique6 = day6.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique6, "Day 6")
+
+# Plotting for Day 7
+df_unique7 = day7.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique7, "Day 7")
+
+# Plotting for Day 8
+df_unique8 = day8.drop_duplicates(subset=['Date_Time'])
+create_bar_chart(df_unique8, "Day 8")
+
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objs as go
+
+# Load the data
+df = pd.read_csv(r"data.txt", delim_whitespace=True, header=None, names=['Date_Time', 'Agency', 'Event','a','b','c','d','e'])
+
+
+print(df['Date_Time'].head())
+
+
+df = df[df['Date_Time'] != 'Date_AND_Time']
+
+df['Date_Time'] = pd.to_datetime(df['Date_Time'], errors='coerce', format='%Y-%jT%H:%M:%S.%f')
+
+df = df.dropna(subset=['Date_Time'])
+
+
+df.sort_values(by='Date_Time', inplace=True)
+
+days_data = []
+for i in range(168, 200):
+    day = df[df['Date_Time'].dt.strftime('%Y-%j') == f'2024-{i:03d}']
+    days_data.append(day)
+
+
+for i, day in enumerate(days_data, start=1):
+    globals()[f'day{i}'] = day
+
+
+def create_day_unique_data(day):
+    df_unique = day.drop_duplicates(subset=['Date_Time'])
+    df_unique['Count'] = 1
+    return df_unique
+
+
+df_unique_list = [create_day_unique_data(day) for day in [day1, day2, day3, day4, day5, day6, day7, day8]]
+
+for i, df_unique in enumerate(df_unique_list, start=1):
+    fig = px.bar(df_unique, 
+                 x='Date_Time', 
+                 y='Count', 
+                 color='Event',  
+                 title=f"Day {i}",
+                 category_orders={'Date_Time': df['Date_Time'].tolist()},
+                 hover_data=['Date_Time','Agency','Event'])
+    
+    fig.update_layout(
+        xaxis=dict(tickangle=-45),
+        bargap=0.5,
+        xaxis_title='Time',
+        yaxis_title='Count',
+        xaxis=dict(showticklabels=True),
+        yaxis=dict(showticklabels=True)
+    )
+    fig.show()
+import pandas as pd
+import plotly.express as px
+
+# Read data from the file
+df = pd.read_csv(r"data.txt", 
+                 delim_whitespace=True, header=None, 
+                 names=['Date_Time', 'Agency', 'Event', 'a', 'b', 'c', 'd', 'e'])
+
+
+days_data = []
+
+
+for i in range(168, 200):
+    day = df[df['Date_Time'].str.contains(f'2024-{i:03d}')] 
+    days_data.append(day)
+
+
+for i, day in enumerate(days_data, start=1):
+    globals()[f'day{i}'] = day
+
+
+for day in [day1, day2, day3, day4, day5, day6, day7, day8]:
+    day['Date_Time'] = pd.to_datetime(day['Date_Time'], format='%Y-%jT%H:%M:%S.%f')
+
+for day in [day1, day2, day3, day4, day5, day6, day7, day8]:
+    day.drop_duplicates(subset=['Date_Time'], inplace=True)
+   
+
+
+for i in range(1, 9):
+    globals()[f'day{i}_resampled'] = globals()[f'day{i}'].set_index('Date_Time').resample('15T').sum().reset_index()
+
+
+def create_bar_chart(day_data, day_title):
+    fig = px.bar(day_data, 
+                 x='Date_Time',
+                 y='Count',
+                 color='Event',  
+                 title=day_title,
+                 hover_data=['Date_Time','Agency','Event'])
+
+    fig.update_layout(
+        xaxis=dict(
+            tickangle=-45,  
+            tickformat='%Y-%m-%d %H:%M:%S',  
+            showticklabels=True
+        ),
+        bargap=0.06,  
+        bargroupgap=0.06,
+        height=800,  
+        width=1200, 
+        barmode='stack', 
+        xaxis_title='Date and Time',
+        yaxis_title='Count'
+    )
+
+    fig.show()
+
+# Plotting for Day 1 to Day 8 using the resampled data
+for i in range(1, 9):
+    df_resampled = globals()[f'day{i}_resampled']
+    create_bar_chart(df_resampled, f"Day {i} (15-Minute Intervals)")
+import numpy as np
+import plotly.graph_objects as go
+
+
+map_on = df[df['Event'].str.contains('MAP_ON', na=False)]  
+map_count = map_on.shape[0]
+
+event_types = ["MAP_ON", "JOINT", "POST_TAKE", "L_ONLY", "LOFS"]
+colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]
+
+events = ["MAP_ON"] * map_count
+
+
+num_rows = 10
+num_cols = len(events) // num_rows
+
+
+x = np.tile(np.arange(num_cols), num_rows)
+y = np.repeat(np.arange(num_rows), num_cols)
+
+
+color_map = {event: color for event, color in zip(event_types, colors)}
+event_colors = [color_map.get(event, "#cccccc") for event in events]
+
+
+hover_text = [f"Date_Time: {row['Date_Time']}<br>Agency: {row['Agency']}<br>Event: {row['Event']}" 
+              for index, row in map_on.iterrows()]
+
+
+fig = go.Figure(data=go.Scatter(
+    x=x, y=-y, 
+    mode="markers",
+    marker=dict(symbol="square", size=10, color=event_colors),
+    text=hover_text,
+    hoverinfo="text"  
+))
+
+fig.update_layout(
+    showlegend=False, plot_bgcolor="white",
+    xaxis=dict(visible=False), yaxis=dict(visible=False),
+    margin=dict(l=0, r=0, t=0, b=0)
+)
+
+fig.show()
+

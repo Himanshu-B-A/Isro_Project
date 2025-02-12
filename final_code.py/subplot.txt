@@ -1,0 +1,24 @@
+fig = make_subplots(
+    rows=8, cols=1,
+    shared_xaxes=True, 
+    shared_yaxes=True, 
+    vertical_spacing=0.02 
+)
+
+fig.add_trace(fig1.data[0], row=1, col=1)
+fig.add_trace(fig2.data[0], row=2, col=1)
+fig.add_trace(fig3.data[0], row=3, col=1)
+fig.add_trace(fig4.data[0], row=4, col=1)
+fig.add_trace(fig5.data[0], row=5, col=1)
+fig.add_trace(fig6.data[0], row=6, col=1)
+fig.add_trace(fig7.data[0], row=7, col=1)
+fig.add_trace(fig8.data[0], row=8, col=1)
+
+fig.update_layout(
+    height=1600, 
+    title_text="Stacked Subplots",
+    showlegend=False 
+)
+
+
+fig.show()
